@@ -1,0 +1,35 @@
+import naves.*
+test "valores" {
+	var apolo = new NaveEspacial()
+	apolo.acercarseUnPocoAlSol()
+	assert.equals(10, apolo.direccion())
+	
+	apolo.acelerar(999999)
+	apolo.acelerar(2)
+	assert.equals(100000, apolo.velocidad())
+
+}
+
+test " color" {
+	var apolo2 = new NavesBaliza(color = "Rojo")
+	apolo2.cambiarColorDeBaliza("Verde")
+	assert.equals("Verde", apolo2.color())
+}
+
+test "raciones"{
+	var pasajeros = new NavesDePasajeros()
+	pasajeros.cargarComida(10)
+	pasajeros.cargarBebida(10)
+	assert.equals(8, pasajeros.comida())
+	assert.equals(8, pasajeros.bebida())
+	
+}
+
+test "estado"{
+	var apolo = new NavesDeCombate()
+	apolo.ponerseInvisible()
+	assert.that(apolo.estaInvisible())
+	//apolo.desplegarMisiles()
+	//assert.that(apolo.misiles())
+	//assert.that(apolo.misilesDesple)
+}
